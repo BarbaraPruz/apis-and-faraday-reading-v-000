@@ -12,7 +12,7 @@ class SearchesController < ApplicationController
       req.params['v'] = '20160201'
       req.params['near'] = params[:zipcode]
       req.params['query'] = 'coffee shop'
-      req.options.timeout = 5000   # 0 to force timeout error for testing
+      req.options.timeout = 5   # 0 seconds to force timeout error for testing
     end
     body_hash = JSON.parse(@resp.body)
     if @resp.success?
